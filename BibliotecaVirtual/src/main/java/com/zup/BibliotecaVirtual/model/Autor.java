@@ -1,11 +1,6 @@
-package com.zup.BibliotecaVirtual.modelo;
-import org.springframework.format.annotation.DateTimeFormat;
+package com.zup.BibliotecaVirtual.model;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.xml.crypto.Data;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Autor {
 

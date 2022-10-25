@@ -1,4 +1,4 @@
-package com.zup.BibliotecaVirtual.modelo;
+package com.zup.BibliotecaVirtual.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Column;
