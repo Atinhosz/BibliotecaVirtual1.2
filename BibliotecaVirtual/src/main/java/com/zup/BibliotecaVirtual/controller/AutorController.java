@@ -1,18 +1,14 @@
 package com.zup.BibliotecaVirtual.controller;
-
 import com.zup.BibliotecaVirtual.dto.AutorDtoRequest;
 import com.zup.BibliotecaVirtual.dto.AutorDtoResponse;
 import com.zup.BibliotecaVirtual.model.Autor;
 import com.zup.BibliotecaVirtual.repository.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.net.URI;
 import java.util.List;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-
 import javax.validation.Valid;
 
 

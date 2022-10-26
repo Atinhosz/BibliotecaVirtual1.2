@@ -1,12 +1,11 @@
 package com.zup.BibliotecaVirtual.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Entity
 public class Livro {
 
 
@@ -20,8 +19,13 @@ public class Livro {
     private String descricao;
     @Column(nullable = false) @DateTimeFormat(pattern="yyyy/MM/dd HH:mm:ss")
     private LocalDateTime diaDoRegistro = LocalDateTime.now();
-
+    @ManyToOne
+    @JoinColumn(name = "autor_id")
     private Autor autor;
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
 
     public Livro(){
     }

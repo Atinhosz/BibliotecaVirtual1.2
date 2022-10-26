@@ -2,6 +2,7 @@ package com.zup.BibliotecaVirtual.model;
 
 import javax.persistence.*;
 
+@Entity
 public class Autor {
 
 

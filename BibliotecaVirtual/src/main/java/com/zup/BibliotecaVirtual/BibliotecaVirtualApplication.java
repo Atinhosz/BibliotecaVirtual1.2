@@ -1,5 +1,4 @@
-package com.zup.BibliotecaVirtual.repository;
-
+package com.zup.BibliotecaVirtual;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
