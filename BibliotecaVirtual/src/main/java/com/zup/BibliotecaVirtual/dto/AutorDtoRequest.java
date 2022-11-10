@@ -18,6 +18,7 @@ public class AutorDtoRequest {
         this.id = autor.getId();
         this.descricao = autor.getDescricao();
         this.nome = autor.getNome();
+        //adicionar email
     }
 
     public String getNome() {
@@ -33,6 +34,6 @@ public class AutorDtoRequest {
     }
 
     public Autor paraAutor(AutorDtoRequest autorDtoRequest){
-        return new Autor(autorDtoRequest.getNome(), autorDtoRequest.descricao);
+        return new Autor(autorDtoRequest.getNome(), autorDtoRequest.getDescricao());
     }
 }

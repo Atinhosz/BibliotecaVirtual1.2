@@ -1,6 +1,8 @@
 package com.zup.BibliotecaVirtual.controller;
 
+import com.zup.BibliotecaVirtual.dto.AutorDtoRequest;
 import com.zup.BibliotecaVirtual.dto.LivroDtoRequest;
+import com.zup.BibliotecaVirtual.model.Autor;
 import com.zup.BibliotecaVirtual.model.Livro;
 import com.zup.BibliotecaVirtual.repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +25,13 @@ public class LivroController {
 
     @PostMapping
     public ResponseEntity<LivroDtoRequest> criar(@RequestBody @Valid LivroDtoRequest livroDtoRequest,  UriComponentsBuilder uriComponentsBuilder){
-        Livro livro = livroDtoRequest.paraLivro();
+        Livro livro = livroDtoRequest.paraLivro(livroDtoRequest);
         Livro salvarLivro = livroRepository.save(livro);
         URI uri = uriComponentsBuilder.path("/livro/{id}").buildAndExpand(livro.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
+
+
 
 
 

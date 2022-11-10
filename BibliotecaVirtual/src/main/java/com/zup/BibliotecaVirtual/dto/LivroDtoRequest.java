@@ -2,10 +2,9 @@ package com.zup.BibliotecaVirtual.dto;
 
 import com.zup.BibliotecaVirtual.model.Autor;
 import com.zup.BibliotecaVirtual.model.Livro;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
-import java.time.LocalDateTime;
+import javax.validation.Valid;
 
 public class LivroDtoRequest {
 
@@ -24,7 +23,7 @@ public class LivroDtoRequest {
     }
 
 
-    public Livro paraLivro() {
+    public Livro paraLivro(@Valid LivroDtoRequest livroDtoRequest) {
         return new Livro(this.titulo, this.descricao, this.autor);
     }
 }

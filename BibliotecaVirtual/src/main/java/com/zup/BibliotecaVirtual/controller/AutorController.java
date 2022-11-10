@@ -1,13 +1,12 @@
 package com.zup.BibliotecaVirtual.controller;
 import com.zup.BibliotecaVirtual.dto.AutorDtoRequest;
-import com.zup.BibliotecaVirtual.dto.AutorDtoResponse;
 import com.zup.BibliotecaVirtual.model.Autor;
 import com.zup.BibliotecaVirtual.repository.AutorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.net.URI;
-import java.util.List;
 import java.util.Optional;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -29,10 +28,14 @@ public class AutorController {
         return ResponseEntity.created(uri).build();
     }
 
-    @GetMapping("/{autor}")
-    public ResponseEntity<AutorDtoResponse> lista(@PathVariable String nome){
+    @GetMapping("/buscarPorAutor")
+    @ResponseBody
+    public ResponseEntity<Autor> lista(@RequestParam(name = "nome") String nome){
         Optional<Autor> autor = autorRepository.findByNome(nome);
-        return ResponseEntity.ok(new AutorDtoResponse(autor));
+        System.out.println(autor.get());
+        //tratar quando nome não existir
+       return new ResponseEntity<Autor>(autor.get(), HttpStatus.OK);
+
     }
 
 }
