@@ -10,12 +10,10 @@ public class Autor {
     private Long id;
     @Column(nullable = false)
     private String nome;
-    //    @Column(nullable = false)
+
     private String email;
     @Column(nullable = false, length = 400)
     private String descricao;
-    // @Column(nullable = false) @DateTimeFormat(pattern="yyyy/MM/dd HH:mm:ss")
-    // private LocalDateTime diaDoRegistro = LocalDateTime.now();
 
     public Autor() {
     }
@@ -42,9 +40,5 @@ public class Autor {
     public String getDescricao() {
         return descricao;
     }
-
-    // public LocalDateTime getDiaDoRegistro() {
-    //      return diaDoRegistro;
-    // }
 
 }
