@@ -10,7 +10,7 @@ public class Autor {
     private Long id;
     @Column(nullable = false)
     private String nome;
-
+    @Column(nullable = false)
     private String email;
     @Column(nullable = false, length = 400)
     private String descricao;
@@ -18,16 +18,13 @@ public class Autor {
     public Autor() {
     }
 
-    public Autor(String nome, String email, String descricao) {
+    public Autor(String nome, String descricao, String email) {
         this.nome = nome;
-        this.email = email;
         this.descricao = descricao;
+        this.email = email;
+
     }
 
-    public Autor(String nome, String descricao) {
-        this.nome = nome;
-        this.descricao = descricao;
-    }
 
     public Long getId() {
         return id;
@@ -40,5 +37,7 @@ public class Autor {
     public String getDescricao() {
         return descricao;
     }
+
+    public String getEmail() {return email; }
 
 }

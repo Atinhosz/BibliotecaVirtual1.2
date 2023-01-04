@@ -5,20 +5,24 @@ import java.util.stream.Collectors;
 
 import com.zup.BibliotecaVirtual.model.Autor;
 
+import javax.validation.constraints.Email;
+
 public class AutorDtoRequest {
 
     private Long id;
     private String nome;
     private String descricao;
+    @Email
+    private String email;
 
     public AutorDtoRequest() {
     }
 
     public AutorDtoRequest(Autor autor){
         this.id = autor.getId();
-        this.descricao = autor.getDescricao();
         this.nome = autor.getNome();
-        //adicionar email
+        this.descricao = autor.getDescricao();
+        this.email = autor.getEmail();
     }
 
     public String getNome() {
@@ -29,11 +33,15 @@ public class AutorDtoRequest {
         return descricao;
     }
 
+    public String getEmail() { return email; }
+
     public static List<AutorDtoRequest> converterLista(List<Autor> autor) {
         return autor.stream().map(AutorDtoRequest::new).collect(Collectors.toList());
     }
 
     public Autor paraAutor(AutorDtoRequest autorDtoRequest){
-        return new Autor(autorDtoRequest.getNome(), autorDtoRequest.getDescricao());
+        return new Autor(autorDtoRequest.getNome(), autorDtoRequest.getDescricao(), autorDtoRequest.getEmail());
     }
+
+
 }

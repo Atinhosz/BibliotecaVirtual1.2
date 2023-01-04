@@ -1,11 +1,9 @@
 package com.zup.BibliotecaVirtual.model;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 public class Livro {
-
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -13,17 +11,13 @@ public class Livro {
     private String titulo;
     @Column(nullable = false)
     private String isbn;
-    @Column(nullable = false, length = 400)
+    @Column(nullable = true, length = 400)
     private String descricao;
     @ManyToOne
-    @JoinColumn(name = "autor_id")
     private Autor autor;
 
-    public void setAutor(Autor autor) {
-        this.autor = autor;
-    }
 
-    public Livro(String titulo, String descricao, Autor autor){
+    public Livro(String descricao, String isbn, Autor autor) {
     }
 
     public Livro(String titulo, String isbn, String descricao, Autor autor) {
@@ -33,7 +27,7 @@ public class Livro {
         this.autor = autor;
     }
 
-    public Livro(){
+    public Livro(String titulo, String isbn, String descricao, String autor){
 
     }
 
