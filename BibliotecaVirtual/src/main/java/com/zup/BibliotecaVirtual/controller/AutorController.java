@@ -32,7 +32,7 @@ public class AutorController {
     @GetMapping
     @ResponseBody
     public ResponseEntity<Autor> lista(@RequestParam(name = "email") String email){
-        Optional<Autor> autor = autorRepository.findByNome(email);
+        Optional<Autor> autor = autorRepository.findByEmail(email);
         if(!autor.isPresent()){
             return ResponseEntity.notFound().build();
         }

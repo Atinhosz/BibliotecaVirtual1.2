@@ -26,7 +26,7 @@ public class LivroDtoRequest {
     }
 
     public LivroDtoRequest(Livro livro) {
-        this.id = livro.getID();
+        this.id = livro.getId();
         this.titulo = livro.getTitulo();
         this.titulo = livro.getIsbn();
         this.descricao = livro.getDescricao();

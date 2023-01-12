@@ -16,6 +16,9 @@ public class Livro {
     @ManyToOne
     private Autor autor;
 
+    public Livro(){
+
+    }
 
     public Livro(String descricao, String isbn, Autor autor) {
     }
@@ -45,10 +48,6 @@ public class Livro {
 
     public String getDescricao() {
         return descricao;
-    }
-
-    public Long getID(){
-        return id;
     }
 
     public Autor getAutor() {

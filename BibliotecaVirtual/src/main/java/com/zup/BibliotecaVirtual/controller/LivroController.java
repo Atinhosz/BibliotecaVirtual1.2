@@ -55,10 +55,10 @@ public class LivroController {
 
 /*
     {
-        "titulo":"sol e tormento",
-            "isbn":"123",
-            "descricao":"redentora do sol se vinga de seus inimigos",
-            "autor":"Leonardo Piteiro3"
+        "titulo":"",
+            "isbn":"",
+            "descricao":"",
+            "autor":""
     }
 */
 
